@@ -8,3 +8,5 @@ bool InRange(A a, B b, C c)
 }
 
 std::vector<std::string> SplitString(const std::string& s, char delimiter);
+
+bool TryParseHexToNumber(const std::string& s, int& output);
