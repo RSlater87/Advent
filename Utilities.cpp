@@ -34,3 +34,27 @@ bool TryParseHexToNumber(const std::string& s, int& output)
         return false;
     }
 }
+
+int BinarySpacePartition(const std::vector<bool>& flags)
+{
+    int start = 0;
+    int end = std::pow(2, flags.size()) - 1;
+
+    int result = 0;
+    for (const auto& f : flags)
+    {
+        int mid = (start + end) / 2;
+        if (f)
+        {
+            end = mid;
+            result = start;
+        }
+        else
+        {
+            start = mid + 1;
+            result = end;
+        }
+    }
+
+    return result;
+}
