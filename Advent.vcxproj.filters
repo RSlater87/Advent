@@ -46,6 +46,12 @@
     <Filter Include="Source Files\Day 5">
       <UniqueIdentifier>{234f4de8-56dc-4e83-b957-04371697e497}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day 6">
+      <UniqueIdentifier>{fe2589aa-6a0a-475e-871f-f84e3e1635ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 6">
+      <UniqueIdentifier>{13a7b014-c696-4d22-a055-f99682a6a013}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -68,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="BoardingPass.cpp">
       <Filter>Source Files\Day 5</Filter>
+    </ClCompile>
+    <ClCompile Include="Customs.cpp">
+      <Filter>Source Files\Day 6</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +101,9 @@
     <ClInclude Include="BoardingPass.h">
       <Filter>Header Files\Day 5</Filter>
     </ClInclude>
+    <ClInclude Include="Customs.h">
+      <Filter>Header Files\Day 6</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Inputs\day1.txt">
@@ -107,6 +119,9 @@
       <Filter>Resource Files\Inputs</Filter>
     </Text>
     <Text Include="Inputs\day5.txt">
+      <Filter>Resource Files\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day6.txt">
       <Filter>Resource Files\Inputs</Filter>
     </Text>
   </ItemGroup>
