@@ -7,43 +7,25 @@
 #include <iostream>
 #include <chrono>
 #include <numeric>
+#include "Utilities.h"
 
-std::vector<Day6::Customs> Day6::ParseFile(const std::string& file)
+std::vector<std::string> Day6::ParseFile(const std::string& file)
 {
-	std::vector<Customs> inputs;
-	std::fstream fs;
-	fs.open(file);
-
-	std::vector<std::string> groups;
-	while (fs.good())
-	{
-		std::string line;
-		std::getline(fs, line);
-		if (!line.empty())
-		{
-			groups.push_back(line);
-		}
-		else
-		{
-			Customs cs = { groups };
-			inputs.push_back(cs);
-			groups.clear();
-		}
-	}
+	std::vector<std::string> inputs = SplitString(ReadAllText(file), "\n\n");
 
 	return inputs;
 }
 
-void Day6::Part1(const std::vector<Customs>& inputs)
+void Day6::Part1(const std::vector<std::string>& inputs)
 {
 	auto start = std::chrono::system_clock::now();
 	std::vector<size_t> combinedStringSizes;
 
 	//Anyone answered = get distinct string
-	std::transform(inputs.cbegin(), inputs.cend(), std::back_inserter(combinedStringSizes), [&](const Customs& cs)
+	std::transform(inputs.cbegin(), inputs.cend(), std::back_inserter(combinedStringSizes), [&](const std::string& cs)
 		{
 			//Sort lines from the group string
-			std::vector<std::string> lines = cs.lines;
+			std::vector<std::string> lines = SplitString(cs, "\n");
 			for (auto& a : lines)
 			{
 				std::sort(a.begin(), a.end());
@@ -74,16 +56,16 @@ void Day6::Part1(const std::vector<Customs>& inputs)
 	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
-void Day6::Part2(const std::vector<Customs>& inputs)
+void Day6::Part2(const std::vector<std::string>& inputs)
 {
 	auto start = std::chrono::system_clock::now();
 	std::vector<size_t> combinedStringSizes;
 
 	//Everyone answered = get intersection string from the lines
-	std::transform(inputs.cbegin(), inputs.cend(), std::back_inserter(combinedStringSizes), [&](const Customs& cs)
+	std::transform(inputs.cbegin(), inputs.cend(), std::back_inserter(combinedStringSizes), [&](const std::string& cs)
 		{
 			//Sort lines from the group string
-			std::vector<std::string> lines = cs.lines;
+			std::vector<std::string> lines = SplitString(cs, "\n");
 			for (auto& a : lines)
 			{
 				std::sort(a.begin(), a.end());
