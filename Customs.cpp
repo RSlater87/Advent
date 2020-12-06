@@ -15,22 +15,19 @@ std::vector<Day6::Customs> Day6::ParseFile(const std::string& file)
 	fs.open(file);
 
 	std::vector<std::string> groups;
-	std::string entry = "";
 	while (fs.good())
 	{
 		std::string line;
 		std::getline(fs, line);
 		if (!line.empty())
 		{
-			entry += line;
 			groups.push_back(line);
 		}
 		else
 		{
-			Customs cs = { groups, entry };
+			Customs cs = { groups };
 			inputs.push_back(cs);
 			groups.clear();
-			entry.clear();
 		}
 	}
 
@@ -45,14 +42,26 @@ void Day6::Part1(const std::vector<Customs>& inputs)
 	//Anyone answered = get distinct string
 	std::transform(inputs.cbegin(), inputs.cend(), std::back_inserter(combinedStringSizes), [&](const Customs& cs)
 		{
-			//Remove duplicates from the group string
-			std::string group = cs.group;
-			std::sort(group.begin(), group.end());
-			auto last = std::unique(group.begin(), group.end());
-			group.erase(last, group.end());
+			//Sort lines from the group string
+			std::vector<std::string> lines = cs.lines;
+			for (auto& a : lines)
+			{
+				std::sort(a.begin(), a.end());
+			}
+
+			//Find union beetween each set
+			std::string intersection = lines[0];
+			for (auto line = lines.cbegin() + 1; line != lines.cend(); ++line)
+			{
+				std::string intersect;
+				std::set_union(intersection.cbegin(), intersection.cend(),
+					line->cbegin(), line->cend(),
+					std::back_inserter(intersect));
+				intersection = intersect;
+			}
 
 			//return the size of the distinct string
-			return group.size();
+			return intersection.size();
 		});
 
 	//Get total count

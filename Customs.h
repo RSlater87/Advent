@@ -8,7 +8,7 @@ namespace Day6
 	struct Customs
 	{
 		std::vector<std::string> lines;
-		std::string group;
+		//std::string group;
 	};
 
 	std::vector<Customs> ParseFile(const std::string& file);
