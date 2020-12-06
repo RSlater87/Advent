@@ -49,7 +49,7 @@ void Day6::Part1(const std::vector<Customs>& inputs)
 				std::sort(a.begin(), a.end());
 			}
 
-			//Find union beetween each set
+			//Find union between each set
 			std::string intersection = lines[0];
 			for (auto line = lines.cbegin() + 1; line != lines.cend(); ++line)
 			{
