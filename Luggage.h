@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <set>
 #include <map>
 
 namespace Day7
@@ -14,7 +15,7 @@ namespace Day7
 
 	struct Vertex
 	{
-		std::vector<std::string> parents;
+		std::set<std::string> parents;
 		std::vector<Child> children;
 	};
 
@@ -30,7 +31,7 @@ namespace Day7
 	/// </summary>
 	/// <param name="luggageGraph"></param>
 	/// <returns></returns>
-	std::vector<std::string> FindTotalParentsKeys(const std::map<std::string, Vertex>& luggageGraph, const std::string& key);
+	std::set<std::string> FindTotalParentsKeys(const std::map<std::string, Vertex>& luggageGraph, const std::string& key);
 
 	/// <summary>
 	/// Recursively find the total number of children for the supplied key

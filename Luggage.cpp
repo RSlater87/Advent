@@ -41,7 +41,7 @@ std::map<std::string, Day7::Vertex> Day7::ParseFile(const std::string& filename)
 				children.push_back(c);
 
 				//update vertex list with parent
-				adjacencyList[c.innerBag].parents.push_back(Key);
+				adjacencyList[c.innerBag].parents.insert(Key);
 			}
 		}
 
@@ -52,7 +52,7 @@ std::map<std::string, Day7::Vertex> Day7::ParseFile(const std::string& filename)
 	return adjacencyList;
 }
 
-std::vector<std::string> Day7::FindTotalParentsKeys(const std::map<std::string, Vertex>& luggageGraph, const std::string& key)
+std::set<std::string> Day7::FindTotalParentsKeys(const std::map<std::string, Vertex>& luggageGraph, const std::string& key)
 {
 	auto vertex = luggageGraph.at(key);
 
@@ -65,7 +65,7 @@ std::vector<std::string> Day7::FindTotalParentsKeys(const std::map<std::string, 
 	for (auto& parent : vertex.parents)
 	{
 		auto grandParents = FindTotalParentsKeys(luggageGraph, parent);
-		totalParents.insert(totalParents.end(), grandParents.begin(), grandParents.end());
+		totalParents.merge(grandParents);
 	}
 
 	return totalParents;
@@ -95,10 +95,6 @@ void Day7::Part1(const std::map<std::string, Vertex>& luggageGraph)
 	auto start = std::chrono::system_clock::now();
 
 	auto totalParents = FindTotalParentsKeys(luggageGraph, "shiny gold");
-
-	std::sort(totalParents.begin(), totalParents.end());
-	totalParents.erase(std::unique(totalParents.begin(), totalParents.end()), totalParents.end());
-
 	std::cout << totalParents.size() << std::endl;
 
 	auto end = std::chrono::system_clock::now();
