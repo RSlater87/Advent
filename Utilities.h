@@ -10,6 +10,11 @@ bool InRange(A a, B b, C c)
 std::string ReadAllText(const std::string& filename);
 std::vector<std::string> SplitString(const std::string& s, char delimiter);
 std::vector<std::string> SplitString(const std::string& str, const std::string& delimiter = " ");
+std::string TrimLeft(const std::string& s);
+std::string TrimRight(const std::string& s);
+std::string Trim(const std::string& s);
+std::string RemoveFirst(const std::string& s, const std::string& toRemove);
+
 
 bool TryParseHexToNumber(const std::string& s, int& output);
 

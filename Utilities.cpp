@@ -50,6 +50,47 @@ std::vector<std::string> SplitString(const std::string& str, const std::string& 
     return cont;
 }
 
+std::string TrimLeft(const std::string& s)
+{
+    auto copy = s;
+    copy.erase(copy.begin(), std::find_if(copy.begin(), copy.end(), [](unsigned char ch) {
+        return !std::isspace(ch);
+        }));
+
+    return copy;
+}
+
+std::string TrimRight(const std::string& s)
+{
+    auto copy = s;
+    copy.erase(std::find_if(copy.rbegin(), copy.rend(), [](unsigned char ch) {
+        return !std::isspace(ch);
+        }).base(), copy.end());
+
+    return copy;
+}
+
+std::string Trim(const std::string& s)
+{
+    auto l = TrimLeft(s);
+    auto r = TrimRight(l);
+
+    return r;
+}
+
+std::string RemoveFirst(const std::string& s, const std::string& toRemove)
+{
+    auto found = s.find(toRemove);
+    if (found != std::string::npos)
+    {
+        auto copy = s;
+        copy.erase(std::begin(copy) + found, std::begin(copy) + found + toRemove.size());
+        return copy;
+    }
+
+    return s;
+}
+
 bool TryParseHexToNumber(const std::string& s, int& output)
 {
     try

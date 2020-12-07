@@ -52,6 +52,12 @@
     <Filter Include="Source Files\Day 6">
       <UniqueIdentifier>{13a7b014-c696-4d22-a055-f99682a6a013}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day 7">
+      <UniqueIdentifier>{49bc4029-b973-439b-8f3f-98d8c235fc4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 7">
+      <UniqueIdentifier>{245963ba-c15e-4b40-8ae9-ae7f0ec38e48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -77,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="Customs.cpp">
       <Filter>Source Files\Day 6</Filter>
+    </ClCompile>
+    <ClCompile Include="Luggage.cpp">
+      <Filter>Source Files\Day 7</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +113,9 @@
     <ClInclude Include="Customs.h">
       <Filter>Header Files\Day 6</Filter>
     </ClInclude>
+    <ClInclude Include="Luggage.h">
+      <Filter>Header Files\Day 7</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Inputs\day1.txt">
@@ -122,6 +134,9 @@
       <Filter>Resource Files\Inputs</Filter>
     </Text>
     <Text Include="Inputs\day6.txt">
+      <Filter>Resource Files\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day7.txt">
       <Filter>Resource Files\Inputs</Filter>
     </Text>
   </ItemGroup>

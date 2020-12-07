@@ -1,11 +1,12 @@
 #include "BoardingPass.h"
 #include "Customs.h"
+#include "Luggage.h"
 
 int main()
 {
-    auto inputs = Day6::ParseFile("Inputs/Day6.txt");
-    Day6::Part1(inputs);
-    Day6::Part2(inputs);
+    auto inputs = Day7::ParseFile("Inputs/Day7.txt");
+    Day7::Part1(inputs);
+    Day7::Part2(inputs);
     
     return 0;
 }

@@ -111,6 +111,7 @@
     <ClCompile Include="CheckMap.cpp" />
     <ClCompile Include="Customs.cpp" />
     <ClCompile Include="FindPair.cpp" />
+    <ClCompile Include="Luggage.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Passport.cpp" />
     <ClCompile Include="Utilities.cpp" />
@@ -121,6 +122,7 @@
     <ClInclude Include="CheckMap.h" />
     <ClInclude Include="Customs.h" />
     <ClInclude Include="FindPair.h" />
+    <ClInclude Include="Luggage.h" />
     <ClInclude Include="Passport.h" />
     <ClInclude Include="RollingBuffer.h" />
     <ClInclude Include="Utilities.h" />
@@ -133,6 +135,7 @@
     <Text Include="Inputs\day4.txt" />
     <Text Include="Inputs\day5.txt" />
     <Text Include="Inputs\day6.txt" />
+    <Text Include="Inputs\day7.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
