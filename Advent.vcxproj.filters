@@ -58,6 +58,9 @@
     <Filter Include="Source Files\Day 7">
       <UniqueIdentifier>{245963ba-c15e-4b40-8ae9-ae7f0ec38e48}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day 8">
+      <UniqueIdentifier>{88795f55-3cd2-4f37-a8a3-3ade4428d0cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -85,6 +88,12 @@
       <Filter>Source Files\Day 6</Filter>
     </ClCompile>
     <ClCompile Include="Luggage.cpp">
+      <Filter>Source Files\Day 7</Filter>
+    </ClCompile>
+    <ClCompile Include="GameConsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Emulator.cpp">
       <Filter>Source Files\Day 7</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,6 +125,12 @@
     <ClInclude Include="Luggage.h">
       <Filter>Header Files\Day 7</Filter>
     </ClInclude>
+    <ClInclude Include="GameConsole.h">
+      <Filter>Header Files\Day 8</Filter>
+    </ClInclude>
+    <ClInclude Include="Emulator.h">
+      <Filter>Header Files\Day 8</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Inputs\day1.txt">
@@ -137,6 +152,9 @@
       <Filter>Resource Files\Inputs</Filter>
     </Text>
     <Text Include="Inputs\day7.txt">
+      <Filter>Resource Files\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day8.txt">
       <Filter>Resource Files\Inputs</Filter>
     </Text>
   </ItemGroup>

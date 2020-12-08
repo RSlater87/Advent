@@ -11,6 +11,7 @@
 
 std::map<std::string, Day7::Vertex> Day7::ParseFile(const std::string& filename)
 {
+	auto start = std::chrono::system_clock::now();
 	std::vector<std::string> inputs = SplitString(ReadAllText(filename), "\n");
 
 	std::map<std::string, Vertex> adjacencyList;
@@ -48,6 +49,11 @@ std::map<std::string, Day7::Vertex> Day7::ParseFile(const std::string& filename)
 		//Add to list
 		adjacencyList[Key].children = children;
 	}
+
+	auto end = std::chrono::system_clock::now();
+
+	std::chrono::duration<double> diff = end - start;
+	std::cout << "Parsing Time t: " << diff.count() << " s\n";
 
 	return adjacencyList;
 }
