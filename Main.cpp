@@ -2,12 +2,13 @@
 #include "Customs.h"
 #include "Luggage.h"
 #include "GameConsole.h"
+#include "Xmas.h"
 
 int main()
 {
-    auto inputs = Day8::ParseFile("Inputs/Day8.txt");
-    Day8::Part1(inputs);
-    Day8::Part2(inputs);
+    auto inputs = Day9::ParseFile("Inputs/Day9.txt");
+    int invalidNumber = Day9::Part1(inputs);
+    Day9::Part2(inputs, invalidNumber);
     
     return 0;
 }

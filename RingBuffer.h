@@ -3,10 +3,10 @@
 #include <vector>
 
 template<typename T>
-class RollingBuffer
+class RingBuffer
 {
 public:
-    RollingBuffer(std::vector<T> v)
+    RingBuffer(std::vector<T> v)
         : m_v(v),
             m_rows(v.size())
     {

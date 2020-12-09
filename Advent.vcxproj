@@ -118,6 +118,7 @@
     <ClCompile Include="Passport.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="ValidatePasswords.cpp" />
+    <ClCompile Include="Xmas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoardingPass.h" />
@@ -128,9 +129,10 @@
     <ClInclude Include="GameConsole.h" />
     <ClInclude Include="Luggage.h" />
     <ClInclude Include="Passport.h" />
-    <ClInclude Include="RollingBuffer.h" />
+    <ClInclude Include="RingBuffer.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="ValidatePasswords.h" />
+    <ClInclude Include="Xmas.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Inputs\day1.txt" />
@@ -141,6 +143,7 @@
     <Text Include="Inputs\day6.txt" />
     <Text Include="Inputs\day7.txt" />
     <Text Include="Inputs\day8.txt" />
+    <Text Include="Inputs\day9.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

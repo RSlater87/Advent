@@ -1,6 +1,6 @@
 #include "CheckMap.h"
 
-int CountTrees(const std::vector<RollingBuffer<char>>& map, size_t right, size_t down)
+int CountTrees(const std::vector<RingBuffer<char>>& map, size_t right, size_t down)
 {
     int count = 0;
     int column = right;
