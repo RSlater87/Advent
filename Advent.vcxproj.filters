@@ -70,6 +70,12 @@
     <Filter Include="Header Files\Day 9">
       <UniqueIdentifier>{46330dfa-aff7-4712-b57b-8dc516b61575}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day 10">
+      <UniqueIdentifier>{87ed0ae0-118d-48a8-be45-f3bc8d77c0a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 10">
+      <UniqueIdentifier>{2f143d5a-4b8c-48ce-a22c-4bd291885ffb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -108,6 +114,9 @@
     <ClCompile Include="Xmas.cpp">
       <Filter>Source Files\Day 9</Filter>
     </ClCompile>
+    <ClCompile Include="Cables.cpp">
+      <Filter>Source Files\Day 10</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utilities.h">
@@ -145,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="RingBuffer.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cables.h">
+      <Filter>Header Files\Day 10</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

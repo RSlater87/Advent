@@ -3,12 +3,13 @@
 #include "Luggage.h"
 #include "GameConsole.h"
 #include "Xmas.h"
+#include "Cables.h"
 
 int main()
 {
-    auto inputs = Day9::ParseFile("Inputs/Day9.txt");
-    int invalidNumber = Day9::Part1(inputs);
-    Day9::Part2(inputs, invalidNumber);
+    auto inputs = Day10::ParseFile("Inputs/Day10.txt");
+    Day10::Part1(inputs);
+    Day10::Part2(inputs);
     
     return 0;
 }

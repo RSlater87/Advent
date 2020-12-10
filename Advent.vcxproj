@@ -108,6 +108,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BoardingPass.cpp" />
+    <ClCompile Include="Cables.cpp" />
     <ClCompile Include="CheckMap.cpp" />
     <ClCompile Include="Customs.cpp" />
     <ClCompile Include="Emulator.cpp" />
@@ -122,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoardingPass.h" />
+    <ClInclude Include="Cables.h" />
     <ClInclude Include="CheckMap.h" />
     <ClInclude Include="Customs.h" />
     <ClInclude Include="Emulator.h" />
