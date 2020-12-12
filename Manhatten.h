@@ -19,6 +19,12 @@ namespace Day12
 		West
 	};
 
+	struct Point
+	{
+		int x;
+		int y;
+	};
+
 	std::vector<Instruction> ParseFile(const std::string& file);
 	void Part1(const std::vector<Instruction>& inputs);
 	void Part2(const std::vector<Instruction>& inputs);
@@ -26,6 +32,5 @@ namespace Day12
 	Direction TurnAntiClockwise(Direction d, int times);
 	Direction TurnClockwise(Direction d, int times);
 
-	void RotateAntiClockwise(int& x, int& y, int times);
-	void RotateClockwise(int& x, int& y, int times);
+	Point RotateAntiClockwise(Point p, int angle);
 }

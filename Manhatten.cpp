@@ -9,6 +9,12 @@
 #include <chrono>
 #include <numeric>
 
+namespace
+{
+	const double PI = 3.1415926535897932384626433832795028841971693993751058209749445923;
+	const double DEG_TO_RAD = PI / 180.0;
+}
+
 std::vector<Day12::Instruction> Day12::ParseFile(const std::string& file)
 {
 	std::vector<std::string> lines = SplitString(ReadAllText(file), "\n");
@@ -89,8 +95,8 @@ void Day12::Part2(const std::vector<Instruction>& inputs)
 	auto start = std::chrono::system_clock::now();
 
 	Direction d = Direction::East;
-	int ship_ns = 0;
-	int ship_ew = 0;
+	Point ship{ 0, 0 };
+	Point waypoint{ 10, 1 };
 	int waypoint_ns = 1;
 	int waypoint_ew = 10;
 
@@ -99,31 +105,31 @@ void Day12::Part2(const std::vector<Instruction>& inputs)
 		switch (instruction.type)
 		{
 		case 'N':
-			waypoint_ns += instruction.value;
+			waypoint.y += instruction.value;
 			break;
 		case 'E':
-			waypoint_ew += instruction.value;
+			waypoint.x += instruction.value;
 			break;
 		case 'S':
-			waypoint_ns -= instruction.value;
+			waypoint.y -= instruction.value;
 			break;
 		case 'W':
-			waypoint_ew -= instruction.value;
+			waypoint.x -= instruction.value;
 			break;
 		case 'L':
-			RotateAntiClockwise(waypoint_ew, waypoint_ns, instruction.value / 90);
+			waypoint = RotateAntiClockwise(waypoint, instruction.value);
 			break;
 		case 'R':
-			RotateClockwise(waypoint_ew, waypoint_ns, instruction.value / 90);
+			waypoint = RotateAntiClockwise(waypoint, 360 - instruction.value);
 			break;
 		case 'F':
-			ship_ns += (instruction.value * waypoint_ns);
-			ship_ew += (instruction.value * waypoint_ew);
+			ship.y += (instruction.value * waypoint.y);
+			ship.x += (instruction.value * waypoint.x);
 			break;
 		}
 	}
 
-	std::cout << "Manhattan Distance: " << std::abs(ship_ns) + std::abs(ship_ew) << std::endl;
+	std::cout << "Manhattan Distance: " << std::abs(ship.y) + std::abs(ship.x) << std::endl;
 
 	auto end = std::chrono::system_clock::now();
 
@@ -179,20 +185,10 @@ Day12::Direction Day12::TurnClockwise(Direction d, int times)
 	return d;
 }
 
-void Day12::RotateAntiClockwise(int& x, int& y, int times)
+Day12::Point Day12::RotateAntiClockwise(Point p, int angle)
 {
-	for (int rotation = 0; rotation < times; ++rotation)
-	{
-		std::swap(x, y);
-		x = -x;
-	}
-}
-
-void Day12::RotateClockwise(int& x, int& y, int times)
-{
-	for (int rotation = 0; rotation < times; ++rotation)
-	{
-		std::swap(x, y);
-		y = -y;
-	}
+	return Point{
+		(int)std::round(p.x * std::cos(angle * DEG_TO_RAD) - p.y * sin(angle * DEG_TO_RAD)),
+		(int)std::round(p.x * std::sin(angle * DEG_TO_RAD) + p.y * cos(angle * DEG_TO_RAD))
+	};
 }
