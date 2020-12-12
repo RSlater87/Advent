@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+#include <algorithm>
 
 template <typename A, typename B, typename C>
 bool InRange(A a, B b, C c)

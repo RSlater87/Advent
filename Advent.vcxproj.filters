@@ -76,6 +76,18 @@
     <Filter Include="Source Files\Day 10">
       <UniqueIdentifier>{2f143d5a-4b8c-48ce-a22c-4bd291885ffb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day 11">
+      <UniqueIdentifier>{787f9536-2d63-44e3-9171-dc476194296a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 11">
+      <UniqueIdentifier>{28cbe3d3-1dd2-4207-b15b-3e87d683269e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day 12">
+      <UniqueIdentifier>{dfb94690-f87f-45b1-9aa4-51a5bcaf5dd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 12">
+      <UniqueIdentifier>{47cbb574-ab87-4a5a-90ee-3002ef5ed85d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -116,6 +128,12 @@
     </ClCompile>
     <ClCompile Include="Cables.cpp">
       <Filter>Source Files\Day 10</Filter>
+    </ClCompile>
+    <ClCompile Include="Ferry.cpp">
+      <Filter>Source Files\Day 11</Filter>
+    </ClCompile>
+    <ClCompile Include="Manhatten.cpp">
+      <Filter>Source Files\Day 12</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +176,12 @@
     <ClInclude Include="Cables.h">
       <Filter>Header Files\Day 10</Filter>
     </ClInclude>
+    <ClInclude Include="Ferry.h">
+      <Filter>Header Files\Day 11</Filter>
+    </ClInclude>
+    <ClInclude Include="Manhatten.h">
+      <Filter>Header Files\Day 12</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Inputs\day1.txt">
@@ -185,6 +209,9 @@
       <Filter>Resource Files\Inputs</Filter>
     </Text>
     <Text Include="Inputs\day9.txt">
+      <Filter>Resource Files\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day11.txt">
       <Filter>Resource Files\Inputs</Filter>
     </Text>
   </ItemGroup>
