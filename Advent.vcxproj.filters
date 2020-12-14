@@ -94,6 +94,12 @@
     <Filter Include="Header Files\Day 13">
       <UniqueIdentifier>{aea6fccf-79e1-46fc-b196-9d30fb9ca0df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day 14">
+      <UniqueIdentifier>{75d2738c-5e34-4b4a-bc73-baa8aebc90ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 14">
+      <UniqueIdentifier>{32f0a411-0275-4666-b12b-dd317dd19d90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -143,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="Bus Schedule.cpp">
       <Filter>Source Files\Day 13</Filter>
+    </ClCompile>
+    <ClCompile Include="Mask.cpp">
+      <Filter>Source Files\Day 14</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +203,9 @@
     <ClInclude Include="BusSchedule.h">
       <Filter>Header Files\Day 13</Filter>
     </ClInclude>
+    <ClInclude Include="Mask.h">
+      <Filter>Header Files\Day 14</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Inputs\day1.txt">
@@ -227,6 +239,9 @@
       <Filter>Resource Files\Inputs</Filter>
     </Text>
     <Text Include="Inputs\day13.txt">
+      <Filter>Resource Files\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day14.txt">
       <Filter>Resource Files\Inputs</Filter>
     </Text>
   </ItemGroup>
