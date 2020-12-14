@@ -1,9 +1,10 @@
-#include "Utilities.h"
+﻿#include "Utilities.h"
 
 #include <sstream>
 #include <algorithm>
 #include <iterator>
 #include <fstream>
+#include <numeric>
 
 std::string ReadAllText(const std::string& filename)
 {
@@ -131,4 +132,81 @@ int BinarySpacePartition(const std::vector<bool>& flags)
     }
 
     return result;
+}
+
+int64_t ModularMultiplicativeInverse(int64_t a, int64_t m)
+{
+    int64_t m0 = m, t, q;
+    int64_t x0 = 0, x1 = 1;
+
+    if (m == 1)
+        return 0;
+
+    // Apply extended Euclid Algorithm 
+    while (a > 1)
+    {
+        // q is quotient 
+        q = a / m;
+
+        t = m;
+
+        // m is remainder now, process same as 
+        // euclid's algo 
+        m = a % m, a = t;
+
+        t = x0;
+
+        x0 = x1 - q * x0;
+
+        x1 = t;
+    }
+
+    // Make x1 positive 
+    if (x1 < 0)
+        x1 += m0;
+
+    return x1;
+}
+
+int64_t MinimumCommonRemainder(const std::vector<int64_t>& numbers, const std::vector<int64_t>& remainders)
+{
+    /*
+    Use Chinese remainder theorum to solve this.
+    We want to find x such that
+    x % competition[0] = 0,
+    x % competition[1] = 1,
+        .......................
+    x % competition[k - 1] = k - 1
+
+    x =  ( ∑ (rem[i]*pp[i]*inv[i]) ) % prod
+    Where 0 <= i <= n-1
+
+    rem[i] is given array of remainders
+
+    prod is product of all given numbers
+    prod = num[0] * num[1] * ... * num[k-1]
+
+    pp[i] is product of all divided by num[i]
+    pp[i] = prod / num[i]
+
+    inv[i] = Modular Multiplicative Inverse of
+                pp[i] with respect to num[i]
+
+    */
+
+    size_t product = std::accumulate(numbers.cbegin(), numbers.cend(), size_t{ 1 }, [&](size_t total, size_t value)
+        {
+            return total * value;
+        });
+
+    size_t total = 0;
+    for (size_t index = 0; index < numbers.size(); ++index)
+    {
+        size_t pp = product / numbers[index];
+        size_t inv = ModularMultiplicativeInverse(pp, numbers[index]);
+
+        total += (remainders[index] * pp * inv);
+    }
+
+    return total % product;
 }

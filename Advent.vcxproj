@@ -108,6 +108,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BoardingPass.cpp" />
+    <ClCompile Include="Bus Schedule.cpp" />
     <ClCompile Include="Cables.cpp" />
     <ClCompile Include="CheckMap.cpp" />
     <ClCompile Include="Customs.cpp" />
@@ -125,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoardingPass.h" />
+    <ClInclude Include="BusSchedule.h" />
     <ClInclude Include="Cables.h" />
     <ClInclude Include="CheckMap.h" />
     <ClInclude Include="Customs.h" />
@@ -143,6 +145,7 @@
   <ItemGroup>
     <Text Include="Inputs\day1.txt" />
     <Text Include="Inputs\day11.txt" />
+    <Text Include="Inputs\day13.txt" />
     <Text Include="Inputs\day2.txt" />
     <Text Include="Inputs\day3.txt" />
     <Text Include="Inputs\day4.txt" />
