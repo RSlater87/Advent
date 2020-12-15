@@ -1,17 +1,16 @@
 #include "Luggage.h"
 #include "Utilities.h"
+#include "Timer.h"
 
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include <fstream>
 #include <iostream>
-#include <chrono>
 #include <numeric>
 
 std::map<std::string, Day7::Vertex> Day7::ParseFile(const std::string& filename)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 	std::vector<std::string> inputs = SplitString(ReadAllText(filename), "\n");
 
 	std::map<std::string, Vertex> adjacencyList;
@@ -49,11 +48,6 @@ std::map<std::string, Day7::Vertex> Day7::ParseFile(const std::string& filename)
 		//Add to list
 		adjacencyList[Key].children = children;
 	}
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Parsing Time t: " << diff.count() << " s\n";
 
 	return adjacencyList;
 }
@@ -98,27 +92,17 @@ size_t Day7::FindTotalChildrenCount(const std::map <std::string, Vertex>& luggag
 
 void Day7::Part1(const std::map<std::string, Vertex>& luggageGraph)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	auto totalParents = FindTotalParentsKeys(luggageGraph, "shiny gold");
 	std::cout << totalParents.size() << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day7::Part2(const std::map<std::string, Vertex>& luggageGraph)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	auto totalParents = FindTotalChildrenCount(luggageGraph, "shiny gold");
 
 	std::cout << totalParents << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }

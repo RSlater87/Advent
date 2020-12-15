@@ -1,13 +1,11 @@
 ﻿#include "BusSchedule.h"
-
 #include "Utilities.h"
+#include "Timer.h"
 
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include <fstream>
 #include <iostream>
-#include <chrono>
 #include <numeric>
 
 Day13::BusSchedule Day13::ParseFile(const std::string& file)
@@ -36,7 +34,7 @@ Day13::BusSchedule Day13::ParseFile(const std::string& file)
 
 void Day13::Part1(BusSchedule bs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	auto nearest = *std::min_element(bs.buses.cbegin(), bs.buses.cend(), [&](int64_t a, int64_t b)
 		{
@@ -44,16 +42,11 @@ void Day13::Part1(BusSchedule bs)
 		});
 
 	std::cout << nearest * (nearest - bs.target % nearest) << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day13::Part2(BusSchedule bs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	int64_t answer = MinimumCommonRemainder(bs.buses, bs.remainders);
 
@@ -66,10 +59,5 @@ void Day13::Part2(BusSchedule bs)
 			<< " = " << answer % bs.buses[index]
 			<< std::endl;
 	}
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 

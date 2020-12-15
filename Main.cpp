@@ -8,14 +8,14 @@
 #include "Manhatten.h"
 #include "BusSchedule.h"
 #include "Mask.h"
+#include "NumbersGame.h"
 #include "Utilities.h"
 #include <iostream>
 
 int main()
 {
-    auto inputs = Day14::ParseFile("Inputs/Day14.txt");
-    Day14::Part1(inputs);
-    Day14::Part2(inputs);
+    Day15::NumbersGame({ 2,15,0,9,1,20 }, 2020);
+    Day15::NumbersGame({ 2,15,0,9,1,20 }, 30000000);
     
     return 0;
 }

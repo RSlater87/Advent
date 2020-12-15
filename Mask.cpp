@@ -1,5 +1,6 @@
 #include "Mask.h"
 #include "Utilities.h"
+#include "Timer.h"
 
 #include <vector>
 #include <algorithm>
@@ -27,7 +28,7 @@ std::vector<Day14::MaskInstruction> Day14::ParseFile(const std::string& file)
 
 void Day14::Part1(const std::vector<MaskInstruction>& inputs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	Mask mask;
 	std::map<std::string, int64_t> memory;
@@ -60,16 +61,11 @@ void Day14::Part1(const std::vector<MaskInstruction>& inputs)
 		});
 
 	std::cout << total << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day14::Part2(const std::vector<MaskInstruction>& inputs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 	std::string mask;
 	std::map<int64_t, int64_t> memory;
 	for (auto& instruction : inputs)
@@ -130,9 +126,4 @@ void Day14::Part2(const std::vector<MaskInstruction>& inputs)
 		});
 
 	std::cout << total << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }

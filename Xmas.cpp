@@ -1,8 +1,7 @@
 #include "Xmas.h"
-
 #include "Utilities.h"
+#include "Timer.h"
 
-#include <chrono>
 #include <fstream>
 #include <iostream>
 #include <list>
@@ -24,7 +23,7 @@ std::vector<int> Day9::ParseFile(const std::string& file)
 
 int Day9::Part1(const std::vector<int>& numbers)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	size_t preamble = 25;
 	std::list<int> buffer;
@@ -77,17 +76,12 @@ int Day9::Part1(const std::vector<int>& numbers)
 
 	std::cout << invalidNumber << std::endl;
 
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
-
 	return invalidNumber;
 }
 
 void Day9::Part2(const std::vector<int>& numbers, int invalidNumber)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 	int answer = 0;
 
 	//loop over each number and find the range that sums to the target
@@ -117,9 +111,4 @@ void Day9::Part2(const std::vector<int>& numbers, int invalidNumber)
 	}
 
 	std::cout << answer << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }

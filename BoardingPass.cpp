@@ -1,11 +1,12 @@
 #include "BoardingPass.h"
 #include "Utilities.h"
+#include "Timer.h"
+
 #include <vector>
 #include <algorithm>
 #include <iterator>
 #include <fstream>
 #include <iostream>
-#include <chrono>
 
 Day5::BoardingPass Day5::ParseBoardingPass(const std::string& id)
 {
@@ -59,60 +60,52 @@ std::vector<Day5::BoardingPass> Day5::ParseFile(const std::string& file)
 
 void Day5::Part1(const std::vector<BoardingPass>& inputs)
 {
-	auto start = std::chrono::system_clock::now();
+    Timer t;
 	auto max = std::max_element(inputs.cbegin(), inputs.cend(), CompareSeatId);
 	std::cout << (*max).SeatID << std::endl;
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day5::Part2(const std::vector<BoardingPass>& inputs)
 {
-    auto start = std::chrono::system_clock::now();
-
-    //Sort the boarding passes by Seat ID
-    auto sortedInputs = inputs;
-    std::sort(sortedInputs.begin(), sortedInputs.end(), CompareSeatId);
-
-    //Find missing seat IDs using lower bound
-    for (int i = 68; i < 965; ++i)
     {
-        auto lower = std::lower_bound(sortedInputs.begin(), sortedInputs.end(), i, [&](const BoardingPass& p, int i)
-            {
-                return p.SeatID < i;
-            });
+        Timer t;
 
-        if (lower != sortedInputs.cend() && lower->SeatID != i)
+        //Sort the boarding passes by Seat ID
+        auto sortedInputs = inputs;
+        std::sort(sortedInputs.begin(), sortedInputs.end(), CompareSeatId);
+
+        //Find missing seat IDs using lower bound
+        for (int i = 68; i < 965; ++i)
         {
-            //Couldn't find i
-            std::cout << "Missing: " << i << std::endl;
+            auto lower = std::lower_bound(sortedInputs.begin(), sortedInputs.end(), i, [&](const BoardingPass& p, int i)
+                {
+                    return p.SeatID < i;
+                });
+
+            if (lower != sortedInputs.cend() && lower->SeatID != i)
+            {
+                //Couldn't find i
+                std::cout << "Missing: " << i << std::endl;
+            }
         }
     }
-    auto end = std::chrono::system_clock::now();
 
-    std::chrono::duration<double> diff = end - start;
-    std::cout << "Time t: " << diff.count() << " s\n";
-
-    start = std::chrono::system_clock::now();
-
-    //Find missing seat IDs using lower bound
-    for (int i = 68; i < 965; ++i)
     {
-        auto lower = std::find_if(inputs.begin(), inputs.end(), [&](const BoardingPass& p)
-            {
-                return p.SeatID == i;
-            });
+        Timer t;
 
-        if (lower == inputs.cend())
+        //Find missing seat IDs using lower bound
+        for (int i = 68; i < 965; ++i)
         {
-            //Couldn't find i
-            std::cout << "Missing: " << i << std::endl;
+            auto lower = std::find_if(inputs.begin(), inputs.end(), [&](const BoardingPass& p)
+                {
+                    return p.SeatID == i;
+                });
+
+            if (lower == inputs.cend())
+            {
+                //Couldn't find i
+                std::cout << "Missing: " << i << std::endl;
+            }
         }
     }
-    end = std::chrono::system_clock::now();
-
-    diff = end - start;
-    std::cout << "Time t: " << diff.count() << " s\n";
 }

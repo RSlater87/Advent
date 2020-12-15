@@ -1,12 +1,11 @@
 #include "GameConsole.h"
 #include "Utilities.h"
+#include "Timer.h"
 
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include <fstream>
 #include <iostream>
-#include <chrono>
 #include <numeric>
 
 std::vector<Instruction> Day8::ParseFile(const std::string& file)
@@ -30,21 +29,16 @@ std::vector<Instruction> Day8::ParseFile(const std::string& file)
 
 void Day8::Part1(const std::vector<Instruction>& instructions)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	Emulator emulator;
 	emulator.Execute(instructions);
 	std::cout << emulator.GetAccumulator() << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day8::Part2(const std::vector<Instruction>& instructions)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	//Use a brute-force approach to determine which instruction to change
 	//This can be made more efficient if we make a graph of the instruction set and work out how to join the end-goal
@@ -64,9 +58,4 @@ void Day8::Part2(const std::vector<Instruction>& instructions)
 	} while (!emulator.Execute(copy_instructions));
 
 	std::cout << emulator.GetAccumulator() << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }

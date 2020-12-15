@@ -1,12 +1,11 @@
 #include "Manhatten.h"
 #include "Utilities.h"
+#include "Timer.h"
 
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include <fstream>
 #include <iostream>
-#include <chrono>
 #include <numeric>
 
 namespace
@@ -30,7 +29,7 @@ std::vector<Day12::Instruction> Day12::ParseFile(const std::string& file)
 
 void Day12::Part1(const std::vector<Instruction>& inputs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	Direction d = Direction::East;
 	int ew_units = 0;
@@ -83,11 +82,6 @@ void Day12::Part1(const std::vector<Instruction>& inputs)
 	}
 
 	std::cout << "Manhattan Distance: " << std::abs(ns_units) + std::abs(ew_units) << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day12::Part2(const std::vector<Instruction>& inputs)

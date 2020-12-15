@@ -1,13 +1,12 @@
 #include "Customs.h"
+#include "Utilities.h"
+#include "Timer.h"
 
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include <fstream>
 #include <iostream>
-#include <chrono>
 #include <numeric>
-#include "Utilities.h"
 
 std::vector<std::string> Day6::ParseFile(const std::string& file)
 {
@@ -18,7 +17,7 @@ std::vector<std::string> Day6::ParseFile(const std::string& file)
 
 void Day6::Part1(const std::vector<std::string>& inputs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 	std::vector<size_t> combinedStringSizes;
 
 	//Anyone answered = get distinct string
@@ -50,15 +49,11 @@ void Day6::Part1(const std::vector<std::string>& inputs)
 	size_t totalCustoms = std::accumulate(combinedStringSizes.cbegin(), combinedStringSizes.cend(), size_t{ 0 });
 
 	std::cout << totalCustoms << std::endl;
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day6::Part2(const std::vector<std::string>& inputs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 	std::vector<size_t> combinedStringSizes;
 
 	//Everyone answered = get intersection string from the lines
@@ -90,8 +85,4 @@ void Day6::Part2(const std::vector<std::string>& inputs)
 	size_t totalCustoms = std::accumulate(combinedStringSizes.cbegin(), combinedStringSizes.cend(), size_t{ 0 });
 
 	std::cout << totalCustoms << std::endl;
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }

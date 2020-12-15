@@ -1,11 +1,12 @@
 #include "Cables.h"
 #include "Utilities.h"
+#include "Timer.h"
+
 #include <vector>
 #include <algorithm>
 #include <iterator>
 #include <fstream>
 #include <iostream>
-#include <chrono>
 #include <numeric>
 
 std::vector<Day10::Cable> Day10::ParseFile(const std::string& file)
@@ -48,7 +49,7 @@ std::vector<Day10::Cable> Day10::ParseFile(const std::string& file)
 
 void Day10::Part1(const std::vector<Cable>& inputs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	auto one = std::count_if(inputs.cbegin(), inputs.cend(), [&](const Cable& c)
 		{
@@ -62,11 +63,6 @@ void Day10::Part1(const std::vector<Cable>& inputs)
 		});
 
 	std::cout << one * three << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 /// <summary>
@@ -96,7 +92,7 @@ void Day10::TraverseByLongestRouteAndCountDifferences(const std::map<int, Cable>
 
 void Day10::Part2(const std::vector<Cable>& inputs)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	//Loop implementation - traverse backwards up the list and work out the possible routes
 	std::map<int, size_t> routes;
@@ -121,11 +117,6 @@ void Day10::Part2(const std::vector<Cable>& inputs)
 	}
 
 	std::cout << routes[0] << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day10::TraverseAndCountRoutesToEnd(const std::map<int, Cable>& adjacencyList, int index, std::map<int, size_t>& routes)

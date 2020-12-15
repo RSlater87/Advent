@@ -1,12 +1,11 @@
 #include "Ferry.h"
 #include "Utilities.h"
+#include "Timer.h"
 
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include <fstream>
 #include <iostream>
-#include <chrono>
 #include <numeric>
 
 std::vector<std::vector<Day11::FerryState>> Day11::ParseFile(const std::string& file)
@@ -29,7 +28,7 @@ std::vector<std::vector<Day11::FerryState>> Day11::ParseFile(const std::string& 
 
 void Day11::Part1(const std::vector<std::vector<FerryState>>& ferryTable)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	auto current = ferryTable;
 
@@ -56,16 +55,11 @@ void Day11::Part1(const std::vector<std::vector<FerryState>>& ferryTable)
 	}
 
 	std::cout << occupiedSeats << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 void Day11::Part2(const std::vector<std::vector<FerryState>>& ferryTable)
 {
-	auto start = std::chrono::system_clock::now();
+	Timer t;
 
 	auto current = ferryTable;
 
@@ -92,11 +86,6 @@ void Day11::Part2(const std::vector<std::vector<FerryState>>& ferryTable)
 	}
 
 	std::cout << occupiedSeats << std::endl;
-
-	auto end = std::chrono::system_clock::now();
-
-	std::chrono::duration<double> diff = end - start;
-	std::cout << "Time t: " << diff.count() << " s\n";
 }
 
 std::vector<std::vector<Day11::FerryState>> Day11::SetEmptySeatsToOccupied_Part1(const std::vector<std::vector<FerryState>>& ferryTable)

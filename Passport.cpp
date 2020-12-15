@@ -1,7 +1,6 @@
 #include "Passport.h"
 #include "Utilities.h"
 
-
 Passport Parse(const std::string& s)
 {
     Passport p;

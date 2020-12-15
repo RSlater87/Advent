@@ -100,6 +100,12 @@
     <Filter Include="Source Files\Day 14">
       <UniqueIdentifier>{32f0a411-0275-4666-b12b-dd317dd19d90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day 15">
+      <UniqueIdentifier>{aa795c83-1798-4313-bcbb-d5604e3ebdab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 15">
+      <UniqueIdentifier>{f58d4f97-7b52-4deb-ab14-da6a310e31ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -153,6 +159,12 @@
     <ClCompile Include="Mask.cpp">
       <Filter>Source Files\Day 14</Filter>
     </ClCompile>
+    <ClCompile Include="NumbersGame.cpp">
+      <Filter>Source Files\Day 15</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utilities.h">
@@ -205,6 +217,12 @@
     </ClInclude>
     <ClInclude Include="Mask.h">
       <Filter>Header Files\Day 14</Filter>
+    </ClInclude>
+    <ClInclude Include="NumbersGame.h">
+      <Filter>Header Files\Day 15</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

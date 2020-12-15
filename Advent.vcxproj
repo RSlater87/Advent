@@ -125,7 +125,9 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Manhatten.cpp" />
     <ClCompile Include="Mask.cpp" />
+    <ClCompile Include="NumbersGame.cpp" />
     <ClCompile Include="Passport.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="ValidatePasswords.cpp" />
     <ClCompile Include="Xmas.cpp" />
@@ -143,8 +145,10 @@
     <ClInclude Include="Luggage.h" />
     <ClInclude Include="Manhatten.h" />
     <ClInclude Include="Mask.h" />
+    <ClInclude Include="NumbersGame.h" />
     <ClInclude Include="Passport.h" />
     <ClInclude Include="RingBuffer.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="ValidatePasswords.h" />
     <ClInclude Include="Xmas.h" />
