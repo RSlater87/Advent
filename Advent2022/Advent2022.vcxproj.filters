@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Day1">
+      <UniqueIdentifier>{9d2c3309-cf8e-4d3a-a9a6-e006907d40ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day2">
+      <UniqueIdentifier>{747b7753-b591-4711-bf2f-eb5ec23d4f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day3">
+      <UniqueIdentifier>{214434d8-bb8e-4df5-8972-745f6a072052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day1">
+      <UniqueIdentifier>{b840826f-b0c5-4c8f-9aa7-00d80ef18723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day2">
+      <UniqueIdentifier>{534f2020-e087-4ed0-95cd-07f1ffed4e1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day3">
+      <UniqueIdentifier>{0c05bf1f-445a-4fe1-bc1c-c235207b1b72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inputs">
+      <UniqueIdentifier>{86d954b5-2377-4010-8e08-6f2d0b8a43f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day4">
+      <UniqueIdentifier>{37d35687-4687-48f1-a259-2e29f0287e82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day4">
+      <UniqueIdentifier>{c317f59b-f509-4f9b-a5bb-f9a06c121122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day5">
+      <UniqueIdentifier>{8d7e23c6-109e-4b2a-a2b1-db69a690ff6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day5">
+      <UniqueIdentifier>{6340c8dd-2758-42ae-97c3-b8e821718554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day6">
+      <UniqueIdentifier>{d8241672-39d4-491f-ae9e-0ba50bb7bb0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day6">
+      <UniqueIdentifier>{3fec5ea2-4722-4fde-acfd-7e7d40ec4796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day 7">
+      <UniqueIdentifier>{ffed25e6-d998-43c8-9a10-54fe668c7830}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day7">
+      <UniqueIdentifier>{eabe903d-4565-4c69-8ce7-bb5e82581ff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day8">
+      <UniqueIdentifier>{ee3306ee-f620-4aae-bb67-d23a298cf42b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day8">
+      <UniqueIdentifier>{de61fc4c-73cd-4b0a-8c59-cf97ea91e522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day9">
+      <UniqueIdentifier>{b01b6c07-451f-48ea-991e-3a03b8102f16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day9">
+      <UniqueIdentifier>{497fa7ca-a274-4b7f-8247-21eab5c3b804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day10">
+      <UniqueIdentifier>{5a94693f-22b1-4362-acf7-0b236c4dff70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day10">
+      <UniqueIdentifier>{1a4c5cda-9737-409e-a123-43c0325d7948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day11">
+      <UniqueIdentifier>{8df1f4a4-e3c8-42eb-84e7-d5f24471083c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day11">
+      <UniqueIdentifier>{2a095af7-2aa3-4b2e-9c95-428412e84682}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Advent2022.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CalorieCounter.cpp">
+      <Filter>Source Files\Day1</Filter>
+    </ClCompile>
+    <ClCompile Include="RockPaperScissors.cpp">
+      <Filter>Source Files\Day2</Filter>
+    </ClCompile>
+    <ClCompile Include="Rucksacks.cpp">
+      <Filter>Source Files\Day3</Filter>
+    </ClCompile>
+    <ClCompile Include="RangeChecking.cpp">
+      <Filter>Source Files\Day4</Filter>
+    </ClCompile>
+    <ClCompile Include="SupplyStacks.cpp">
+      <Filter>Source Files\Day5</Filter>
+    </ClCompile>
+    <ClCompile Include="TuningTrouble.cpp">
+      <Filter>Source Files\Day6</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectorySearch.cpp">
+      <Filter>Source Files\Day7</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeMap.cpp">
+      <Filter>Source Files\Day8</Filter>
+    </ClCompile>
+    <ClCompile Include="RopeTracking.cpp">
+      <Filter>Source Files\Day9</Filter>
+    </ClCompile>
+    <ClCompile Include="CathodeRayTube.cpp">
+      <Filter>Source Files\Day10</Filter>
+    </ClCompile>
+    <ClCompile Include="MonkeyBusiness.cpp">
+      <Filter>Source Files\Day11</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CalorieCounter.h">
+      <Filter>Header Files\Day1</Filter>
+    </ClInclude>
+    <ClInclude Include="RockPaperScissors.h">
+      <Filter>Header Files\Day2</Filter>
+    </ClInclude>
+    <ClInclude Include="Rucksacks.h">
+      <Filter>Header Files\Day3</Filter>
+    </ClInclude>
+    <ClInclude Include="RangeChecking.h">
+      <Filter>Header Files\Day4</Filter>
+    </ClInclude>
+    <ClInclude Include="SupplyStacks.h">
+      <Filter>Header Files\Day5</Filter>
+    </ClInclude>
+    <ClInclude Include="TuningTrouble.h">
+      <Filter>Header Files\Day6</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectorySearch.h">
+      <Filter>Header Files\Day 7</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeMap.h">
+      <Filter>Header Files\Day8</Filter>
+    </ClInclude>
+    <ClInclude Include="RopeTracking.h">
+      <Filter>Header Files\Day9</Filter>
+    </ClInclude>
+    <ClInclude Include="CathodeRayTube.h">
+      <Filter>Header Files\Day10</Filter>
+    </ClInclude>
+    <ClInclude Include="MonkeyBusiness.h">
+      <Filter>Header Files\Day11</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Inputs\2022-1.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\2022-2.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\2022-2_example.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\2022-3.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\2022-4.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\2022-5.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\2022-6.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\2022-7.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\2022-9.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
