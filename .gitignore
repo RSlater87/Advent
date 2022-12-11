@@ -362,3 +362,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 .vscode/
+Advent2022/Inputs/
+Advent/Inputs/
