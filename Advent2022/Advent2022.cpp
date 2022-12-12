@@ -6,12 +6,14 @@
 #include "RopeTracking.h"
 #include "CathodeRayTube.h"
 #include "MonkeyBusiness.h"
+#include "HillClimbingAlgorithm.h"
  
 int main()
 {
-    MonkeyBusiness::PerformOperations("Inputs/2022-11.txt", 20, 3, 8);
+    auto heatmap = HillClimbingAlgorithm::ParseFile("Inputs/2022-12.txt");
 
-    MonkeyBusiness::PerformOperations("Inputs/2022-11.txt", 10000, 1, 8);
+    HillClimbingAlgorithm::Part1(heatmap);
+    HillClimbingAlgorithm::Part2(heatmap);
 
     return 0;
 }

@@ -52,9 +52,6 @@
     <Filter Include="Source Files\Day6">
       <UniqueIdentifier>{3fec5ea2-4722-4fde-acfd-7e7d40ec4796}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Day 7">
-      <UniqueIdentifier>{ffed25e6-d998-43c8-9a10-54fe668c7830}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Day7">
       <UniqueIdentifier>{eabe903d-4565-4c69-8ce7-bb5e82581ff2}</UniqueIdentifier>
     </Filter>
@@ -81,6 +78,15 @@
     </Filter>
     <Filter Include="Source Files\Day11">
       <UniqueIdentifier>{2a095af7-2aa3-4b2e-9c95-428412e84682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day12">
+      <UniqueIdentifier>{08868939-fa22-4f5d-98e4-92ff65559146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day12">
+      <UniqueIdentifier>{6db029a7-6d92-4a39-aea2-d7e43affa309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Day7">
+      <UniqueIdentifier>{ffed25e6-d998-43c8-9a10-54fe668c7830}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +126,9 @@
     <ClCompile Include="MonkeyBusiness.cpp">
       <Filter>Source Files\Day11</Filter>
     </ClCompile>
+    <ClCompile Include="HillClimbingAlgorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalorieCounter.h">
@@ -141,7 +150,7 @@
       <Filter>Header Files\Day6</Filter>
     </ClInclude>
     <ClInclude Include="DirectorySearch.h">
-      <Filter>Header Files\Day 7</Filter>
+      <Filter>Header Files\Day7</Filter>
     </ClInclude>
     <ClInclude Include="TreeMap.h">
       <Filter>Header Files\Day8</Filter>
@@ -154,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="MonkeyBusiness.h">
       <Filter>Header Files\Day11</Filter>
+    </ClInclude>
+    <ClInclude Include="HillClimbingAlgorithm.h">
+      <Filter>Header Files\Day12</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
