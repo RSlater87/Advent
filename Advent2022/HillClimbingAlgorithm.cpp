@@ -40,32 +40,37 @@ void HillClimbingAlgorithm::Part1(HeatMap& heatmap)
     Timer t;
 
     auto distanceGraph = GenerateDistanceGraph(heatmap);
-    std::map<Point, int> routeGraph = Dijkstra_FindEndWithShortestRoute(heatmap.start, heatmap, distanceGraph);
+    //Get route graph for end, and then find shortest route for the start
+    std::map<Point, int> routeGraph = Dijkstra_FindEndWithShortestRoute(heatmap.end, heatmap, distanceGraph);
 
-    std::cout << routeGraph[heatmap.end] << std::endl;
+    std::cout << routeGraph[heatmap.start] << std::endl;
 }
 
 void HillClimbingAlgorithm::Part2(HeatMap& heatmap)
 {
     Timer t;
 
-    std::vector<std::pair<Point, char>> possibleStarts;
+    std::vector<Point> possibleStarts;
     std::vector<int> possibleRoutes;
     auto distanceGraph = GenerateDistanceGraph(heatmap);
 
-    std::copy_if(heatmap.points.begin(), heatmap.points.end(), std::back_inserter(possibleStarts), [&](auto& kvp)
+    for (auto& kvp : heatmap.points)
+    {
+        if (kvp.second == 'a')
         {
-            return kvp.second == 'a';
-        });
+            possibleStarts.push_back(kvp.first);
+        }
+    }
+
+    //Get route graph for end, and then find shortest route for the start elevations
+    std::map<Point, int> routeGraph = Dijkstra_FindEndWithShortestRoute(heatmap.end, heatmap, distanceGraph);
 
     for (size_t i = 0; i < possibleStarts.size(); ++i)
     {
-        Point p = possibleStarts[i].first;
-
-        std::map<Point, int> routeGraph = Dijkstra_FindEndWithShortestRoute(p, heatmap, distanceGraph);
-        if (routeGraph[heatmap.end] > 0)
+        Point p = possibleStarts[i];
+        if (routeGraph[p] > 0)  //Ignore missing elements
         {
-            possibleRoutes.push_back(routeGraph[heatmap.end]);
+            possibleRoutes.push_back(routeGraph[p]);
         }
     }
 
@@ -99,7 +104,7 @@ std::map<Vertex, int> HillClimbingAlgorithm::GenerateDistanceGraph(HeatMap& heat
 
             auto targetElevation = heatmap.points[exit];
             auto height = targetElevation - currentElevation;
-            if (height <= 1)
+            if (height >= -1)
             {
                 distances.emplace(Vertex{ point, exit }, 1);
             }

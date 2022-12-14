@@ -4,6 +4,10 @@
 
 #include "export.h"
 
+//Just ignore C4251 here
+#pragma warning( push )
+#pragma warning( disable: 4251 )
+
 class DLLEXPORT Timer
 {
 public:
@@ -13,3 +17,5 @@ public:
 private:
 	std::chrono::time_point<std::chrono::system_clock> start;
 };
+
+#pragma warning( pop )
