@@ -88,6 +88,12 @@
     <Filter Include="Header Files\Day7">
       <UniqueIdentifier>{ffed25e6-d998-43c8-9a10-54fe668c7830}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day13">
+      <UniqueIdentifier>{0516b4e2-9968-4f8c-b7a3-ab7f37022091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day13">
+      <UniqueIdentifier>{26bf7dc6-021f-4411-ac2f-f96141a587e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Advent2022.cpp">
@@ -129,6 +135,9 @@
     <ClCompile Include="HillClimbingAlgorithm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DistressSignal.cpp">
+      <Filter>Source Files\Day13</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalorieCounter.h">
@@ -166,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="HillClimbingAlgorithm.h">
       <Filter>Header Files\Day12</Filter>
+    </ClInclude>
+    <ClInclude Include="DistressSignal.h">
+      <Filter>Header Files\Day13</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
