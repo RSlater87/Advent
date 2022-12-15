@@ -94,6 +94,12 @@
     <Filter Include="Source Files\Day13">
       <UniqueIdentifier>{26bf7dc6-021f-4411-ac2f-f96141a587e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day14">
+      <UniqueIdentifier>{c39e8a8f-acfd-4271-8840-14a080057d54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day14">
+      <UniqueIdentifier>{f308c886-bb36-4063-bb8b-45d5f4a833b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Advent2022.cpp">
@@ -132,11 +138,14 @@
     <ClCompile Include="MonkeyBusiness.cpp">
       <Filter>Source Files\Day11</Filter>
     </ClCompile>
-    <ClCompile Include="HillClimbingAlgorithm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DistressSignal.cpp">
       <Filter>Source Files\Day13</Filter>
+    </ClCompile>
+    <ClCompile Include="HillClimbingAlgorithm.cpp">
+      <Filter>Source Files\Day12</Filter>
+    </ClCompile>
+    <ClCompile Include="SandSimulator.cpp">
+      <Filter>Source Files\Day14</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="DistressSignal.h">
       <Filter>Header Files\Day13</Filter>
+    </ClInclude>
+    <ClInclude Include="SandSimulator.h">
+      <Filter>Header Files\Day14</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

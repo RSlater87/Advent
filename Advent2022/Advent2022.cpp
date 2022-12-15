@@ -7,13 +7,15 @@
 #include "CathodeRayTube.h"
 #include "MonkeyBusiness.h"
 #include "HillClimbingAlgorithm.h"
+#include "DistressSignal.h"
+#include "SandSimulator.h"
  
 int main()
 {
-    auto heatmap = HillClimbingAlgorithm::ParseFile("Inputs/2022-12.txt");
+    auto caveMap = SandSimulator::ParseFile("Inputs/2022-14.txt");
 
-    HillClimbingAlgorithm::Part1(heatmap);
-    HillClimbingAlgorithm::Part2(heatmap);
+    SandSimulator::Part1(caveMap);
+    SandSimulator::Part2(caveMap);
 
     return 0;
 }

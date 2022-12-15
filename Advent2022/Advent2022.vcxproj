@@ -150,6 +150,7 @@
     <ClCompile Include="RockPaperScissors.cpp" />
     <ClCompile Include="RopeTracking.cpp" />
     <ClCompile Include="Rucksacks.cpp" />
+    <ClCompile Include="SandSimulator.cpp" />
     <ClCompile Include="SupplyStacks.cpp" />
     <ClCompile Include="TreeMap.cpp" />
     <ClCompile Include="TuningTrouble.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="RockPaperScissors.h" />
     <ClInclude Include="RopeTracking.h" />
     <ClInclude Include="Rucksacks.h" />
+    <ClInclude Include="SandSimulator.h" />
     <ClInclude Include="SupplyStacks.h" />
     <ClInclude Include="TreeMap.h" />
     <ClInclude Include="TuningTrouble.h" />
