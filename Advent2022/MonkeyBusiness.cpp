@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <numeric>
+#include "../AdventUtility/Timer.h"
 
 MonkeyBusiness::Monkey::Monkey(std::shared_ptr<std::vector<Monkey>> monkeys, std::istream& iss, size_t worryDivisor)
 	: m_monkeys(monkeys)
@@ -121,6 +122,8 @@ size_t MonkeyBusiness::Monkey::TestDivisor()
 
 void MonkeyBusiness::PerformOperations(const std::string& filename, int rounds, size_t worryDivisor, size_t numMonkeys)
 {
+	Timer t;
+
 	std::shared_ptr<std::vector<Monkey>> monkeys = std::make_shared<std::vector<Monkey>>();
 
 	std::ifstream is{ filename };

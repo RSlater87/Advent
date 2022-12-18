@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Advent2022.cpp" />
+    <ClCompile Include="BeaconDetection.cpp" />
     <ClCompile Include="CalorieCounter.cpp" />
     <ClCompile Include="CathodeRayTube.cpp" />
     <ClCompile Include="DirectorySearch.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="TuningTrouble.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BeaconDetection.h" />
     <ClInclude Include="CalorieCounter.h" />
     <ClInclude Include="CathodeRayTube.h" />
     <ClInclude Include="DirectorySearch.h" />

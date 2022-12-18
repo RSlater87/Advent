@@ -100,6 +100,12 @@
     <Filter Include="Source Files\Day14">
       <UniqueIdentifier>{f308c886-bb36-4063-bb8b-45d5f4a833b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Day15">
+      <UniqueIdentifier>{c590453a-75b3-4c2f-b896-cd0977358880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day15">
+      <UniqueIdentifier>{19a4c349-6f9b-4fba-9f51-dfa8435c8cdf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Advent2022.cpp">
@@ -147,6 +153,9 @@
     <ClCompile Include="SandSimulator.cpp">
       <Filter>Source Files\Day14</Filter>
     </ClCompile>
+    <ClCompile Include="BeaconDetection.cpp">
+      <Filter>Source Files\Day15</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalorieCounter.h">
@@ -190,6 +199,9 @@
     </ClInclude>
     <ClInclude Include="SandSimulator.h">
       <Filter>Header Files\Day14</Filter>
+    </ClInclude>
+    <ClInclude Include="BeaconDetection.h">
+      <Filter>Header Files\Day15</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

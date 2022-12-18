@@ -2,10 +2,12 @@
 
 #include "export.h"
 
+typedef long long PositionType;
+
 struct DLLEXPORT Point
 {
-	int x;
-	int y;
+	PositionType x;
+	PositionType y;
 };
 
 inline bool operator ==(const Point& lhs, const Point& rhs)
@@ -22,13 +24,15 @@ template <typename T> int sgn(T val) {
 	return (T(0) < val) - (val < T(0));
 }
 
-struct DLLEXPORT Vertex
+struct DLLEXPORT Line
 {
-	Point left;
-	Point right;
+	Point a;
+	Point b;
 };
 
-inline bool operator <(const Vertex& lhs, const Vertex& rhs)
+inline bool operator <(const Line& lhs, const Line& rhs)
 {
-	return (lhs.left < rhs.left) || ((lhs.left == rhs.left) && (lhs.right < rhs.right));
+	return (lhs.a < rhs.a) || ((lhs.a == rhs.a) && (lhs.b < rhs.b));
 }
+
+PositionType DLLEXPORT ManhattenDistance(Point a, Point b);

@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include "../AdventUtility/Point.h"
 
 namespace Day12
 {
@@ -17,12 +18,6 @@ namespace Day12
 		East,
 		South,
 		West
-	};
-
-	struct Point
-	{
-		int x;
-		int y;
 	};
 
 	std::vector<Instruction> ParseFile(const std::string& file);

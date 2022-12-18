@@ -14,6 +14,8 @@ public:
 	Timer();
 	~Timer();
 
+	double SoFar();
+
 private:
 	std::chrono::time_point<std::chrono::system_clock> start;
 };

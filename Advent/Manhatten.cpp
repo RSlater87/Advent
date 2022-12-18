@@ -179,7 +179,7 @@ Day12::Direction Day12::TurnClockwise(Direction d, int times)
 	return d;
 }
 
-Day12::Point Day12::RotateAntiClockwise(Point p, int angle)
+Point Day12::RotateAntiClockwise(Point p, int angle)
 {
 	return Point{
 		(int)std::round(p.x * std::cos(angle * DEG_TO_RAD) - p.y * sin(angle * DEG_TO_RAD)),

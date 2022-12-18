@@ -21,10 +21,10 @@ namespace HillClimbingAlgorithm
 
 	void Part2(HeatMap& heatmap);
 
-	std::map<Vertex, int> GenerateDistanceGraph(HeatMap& heatmap);
+	std::map<Line, int> GenerateDistanceGraph(HeatMap& heatmap);
 
 	std::map<Point, int> Dijkstra_FindEndWithShortestRoute(
 		Point startPosition,
 		HeatMap& heatmap,
-		const std::map<Vertex, int>& distanceGraph);
+		const std::map<Line, int>& distanceGraph);
 }

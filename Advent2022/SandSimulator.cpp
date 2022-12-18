@@ -55,16 +55,16 @@ SandSimulator::CaveMap SandSimulator::ParseFile(const std::string& filename)
 		{
 			if (left->x == right->x) //Draw along Y-axis
 			{
-				int start = std::min(left->y, right->y), end = std::max(left->y, right->y);
-				for (int py = start; py <= end; ++py)
+				__int64 start = std::min(left->y, right->y), end = std::max(left->y, right->y);
+				for (__int64 py = start; py <= end; ++py)
 				{
 					caveMap.caveMap[left->x][py] = State::Rock;
 				}
 			}
 			else					//Draw along X-axis
 			{
-				int start = std::min(left->x, right->x), end = std::max(left->x, right->x);
-				for (int px = start; px <= end; ++px)
+				__int64 start = std::min(left->x, right->x), end = std::max(left->x, right->x);
+				for (__int64 px = start; px <= end; ++px)
 				{
 					caveMap.caveMap[px][left->y] = State::Rock;
 				}

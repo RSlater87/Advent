@@ -80,9 +80,9 @@ void HillClimbingAlgorithm::Part2(HeatMap& heatmap)
 
 }
 
-std::map<Vertex, int> HillClimbingAlgorithm::GenerateDistanceGraph(HeatMap& heatmap)
+std::map<Line, int> HillClimbingAlgorithm::GenerateDistanceGraph(HeatMap& heatmap)
 {
-    std::map<Vertex, int> distances;
+    std::map<Line, int> distances;
     for (auto& kvp : heatmap.points)
     {
         auto point = kvp.first;
@@ -106,7 +106,7 @@ std::map<Vertex, int> HillClimbingAlgorithm::GenerateDistanceGraph(HeatMap& heat
             auto height = targetElevation - currentElevation;
             if (height >= -1)
             {
-                distances.emplace(Vertex{ point, exit }, 1);
+                distances.emplace(Line{ point, exit }, 1);
             }
         }
     }
@@ -117,7 +117,7 @@ std::map<Vertex, int> HillClimbingAlgorithm::GenerateDistanceGraph(HeatMap& heat
 std::map<Point, int> HillClimbingAlgorithm::Dijkstra_FindEndWithShortestRoute(
     Point startPosition,
     HeatMap& heatmap, 
-    const std::map<Vertex, int>& distanceGraph)
+    const std::map<Line, int>& distanceGraph)
 {
     std::vector<Point> visitHistory;
     std::map<Point, int> routeGraph;
@@ -143,7 +143,7 @@ std::map<Point, int> HillClimbingAlgorithm::Dijkstra_FindEndWithShortestRoute(
         for (auto& exit : exits)
         {
             //Find the distance to this vertex
-            Vertex vertex = { currentPos, exit };
+            Line vertex = { currentPos, exit };
             auto kvp = distanceGraph.find(vertex);
             if (kvp == distanceGraph.cend())
             {
