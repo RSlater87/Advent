@@ -27,7 +27,7 @@ namespace BeaconDetection
 	void Part2(const std::vector<SensorDetails>& sensorDetails, int searchSpace);
 
 	bool ManhattenLineIntersection(Line line0, Line line1, Point* intersect);
-	std::vector<Line> FindExcludedLines(const std::vector<SensorDetails>& sensorDetails, int row);
+	std::vector<Line> FindExcludedLines(const std::vector<SensorDetails>& sensorDetails, int row, Line beam);
 	std::set<Point> BeaconsOnRow(const std::vector<SensorDetails>& sensorDetails, int row);
 	Line CalculateBeam(const std::vector<SensorDetails>& sensorDetails, int row);
 }

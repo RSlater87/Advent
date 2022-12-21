@@ -47,8 +47,9 @@ std::vector<BeaconDetection::SensorDetails> BeaconDetection::ParseFile(const std
 void BeaconDetection::Part1(const std::vector<SensorDetails>& sensorDetails, int row)
 {
 	Timer t;
+	Line beam = CalculateBeam(sensorDetails, row);
 	auto beaconsOnRow = BeaconsOnRow(sensorDetails, row);
-	auto excludedLines = FindExcludedLines(sensorDetails, row);
+	auto excludedLines = FindExcludedLines(sensorDetails, row,  beam);
 	auto excludedPoints = std::accumulate(excludedLines.cbegin(), excludedLines.cend(), double{ 0 }, [&](double total, const Line& l)
 		{
 			return total + l.b.x - l.a.x;
@@ -68,10 +69,14 @@ void BeaconDetection::Part2(const std::vector<SensorDetails>& sensorDetails, int
 {
 	Timer t;
 
+	//Find the min and max of the sensor map. This is sensor.x +-/- manhatten distance
+	Line beam = CalculateBeam(sensorDetails, 0);
+
 	for (int i = 0; i <= searchSpace; ++i)
 	{
-		auto excludedLines = FindExcludedLines(sensorDetails, i);
-		auto beam = CalculateBeam(sensorDetails, i);
+		beam.a.y = beam.b.y = i;
+
+		auto excludedLines = FindExcludedLines(sensorDetails, i, beam);
 
 		if (excludedLines.size() > 1)
 		{
@@ -97,13 +102,12 @@ void BeaconDetection::Part2(const std::vector<SensorDetails>& sensorDetails, int
 /// <returns>Whether there's an intersection point or not</returns>
 bool BeaconDetection::ManhattenLineIntersection(Line line0, Line line1, Point* intersect)
 {
-	double s0_x = static_cast<double>(line0.b.x - line0.a.x);
-	double s0_y = static_cast<double>(line0.b.y - line0.a.y);
-	double s1_x = static_cast<double>(line1.b.x - line1.a.x);
-	double s1_y = static_cast<double>(line1.b.y - line1.a.y);
-
-	double s = (-s0_y * (line0.a.x - line1.a.x) + s0_x * (line0.a.y - line1.a.y)) / (-s1_x * s0_y + s0_x * s1_y);
-	double t = ( s1_x * (line0.a.y - line1.a.y) - s1_y * (line0.a.x - line1.a.x)) / (-s1_x * s0_y + s0_x * s1_y);
+	const double s0_x = static_cast<double>(line0.b.x - line0.a.x);
+	const double s0_y = static_cast<double>(line0.b.y - line0.a.y);
+	const double s1_x = static_cast<double>(line1.b.x - line1.a.x);
+	const double s1_y = static_cast<double>(line1.b.y - line1.a.y);
+	const double s = (-s0_y * (line0.a.x - line1.a.x) + s0_x * (line0.a.y - line1.a.y)) / (-s1_x * s0_y + s0_x * s1_y);
+	const double t = ( s1_x * (line0.a.y - line1.a.y) - s1_y * (line0.a.x - line1.a.x)) / (-s1_x * s0_y + s0_x * s1_y);
 
 	if (s >= 0 && s <= 1 && t >= 0 && t <= 1)
 	{
@@ -122,29 +126,20 @@ bool BeaconDetection::ManhattenLineIntersection(Line line0, Line line1, Point* i
 /// <param name="sensorDetails">Sensor Details</param>
 /// <param name="row">Row to scan</param>
 /// <returns>List of excluded lines.</returns>
-std::vector<Line> BeaconDetection::FindExcludedLines(const std::vector<SensorDetails>& sensorDetails, int row)
+std::vector<Line> BeaconDetection::FindExcludedLines(const std::vector<SensorDetails>& sensorDetails, int row, Line beam)
 {
-	std::vector<Point> beacons;
-	std::transform(sensorDetails.cbegin(), sensorDetails.cend(), std::back_inserter(beacons), [&](const SensorDetails& sd)
-		{
-			return sd.beacon;
-		});
-
-	//Find the min and max of the sensor map. This is sensor.x +-/- manhatten distance
-	Line beam = CalculateBeam(sensorDetails, row);
-
 	//For each sensor, find the intersect on the left (top or bottom) and right
 	std::vector<Line> intersectingLines;
-
+	Point intersectLeft, intersectRight;
 	for (auto& sensorDetail : sensorDetails)
 	{
-		Point intersectLeft;
 		if (ManhattenLineIntersection(beam, sensorDetail.leftBottom, &intersectLeft)
 			|| ManhattenLineIntersection(beam, sensorDetail.leftTop, &intersectLeft))
 		{
 			//Distance from left-intercept to right-intercept is (2 * distance) + 1 from left-intercept to the sensor
 			auto width = sensorDetail.sensor.x - intersectLeft.x;
-			Point intersectRight = Point{ intersectLeft.x + (width * 2) + 1, intersectLeft.y };
+			intersectRight.x = intersectLeft.x + (width * 2) + 1;
+			intersectRight.y = intersectLeft.y;
 			intersectingLines.emplace_back(Line{ intersectLeft, intersectRight });
 		}
 	}
